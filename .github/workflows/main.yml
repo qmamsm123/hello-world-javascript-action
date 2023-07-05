@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: qmamsm123/hello-world-javascript-action
+        uses: qmamsm123/hello-world-javascript-action@v1.1
         with:
           who-to-greet: git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }})
       # Use the output from the `hello` step
