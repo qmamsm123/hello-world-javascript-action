@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  check-changes:
+    runs-on: ubuntu-latest
+    name: 변경사항 검증
+    steps:
+      - name: 변경사항을 검증합니다.
+        id: hello
+        uses: qmamsm123/hello-world-javascript-action@v1.5
+        with:
+          diffs: "something/\notherthing/\n"
