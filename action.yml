@@ -1,13 +1,10 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: '특정 폴더에만 수정이 일어났는지 확인'
+description: '특정 폴더에만 수정이 일어났는지를 확인합니다.'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  diffs:
+    description: '파일 수정사항 목록'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: ''
 runs:
   using: 'node16'
   main: 'dist/index.js'
