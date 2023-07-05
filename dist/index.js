@@ -9798,18 +9798,15 @@ const github = __nccwpck_require__(3007);
 const target = "something/";
 
 try {
-  const diffs = core.getInput("who-to-greet").split("\n");
-  console.log("diffs", diffs);
-  let matched = 0;
-  diffs.forEach((diff) => {
-    if (diff.indexOf(diff) !== -1) {
-      matched += 1;
+  const diffs = core.getInput("diffs").split("\n");
+  console.log("입력된 수정사항 목록: ", diffs);
+  console.log(`검사할 경로는 ${target}입니다.`);
+  const filtered = diffs.filter((diff) => diff.startsWith(target));
+  if (filtered) {
+    console.log("대상 경로에 수정사항이 존재합니다.");
+    if (filtered.length !== diffs.length) {
+      throw new Error("대상 경로 외 수정사항이 존재합니다.");
     }
-  });
-  if (matched !== 0 && matched !== diffs.length) {
-    throw new Error(
-      `There are ${matched} diffs, but only ${diffs.length} are matched.`
-    );
   }
 } catch (error) {
   core.setFailed(error.message);
