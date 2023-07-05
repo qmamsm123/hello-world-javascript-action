@@ -9,7 +9,7 @@ jobs:
         id: hello
         uses: qmamsm123/hello-world-javascript-action@v1.1
         with:
-          who-to-greet: git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }})
+          who-to-greet: "Something/\nOtherThing/"
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
