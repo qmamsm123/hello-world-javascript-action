@@ -9,4 +9,4 @@ jobs:
         id: hello
         uses: qmamsm123/hello-world-javascript-action@v1.5
         with:
-          diffs: "something/\notherthing/\n"
+          diffs: "something/"
