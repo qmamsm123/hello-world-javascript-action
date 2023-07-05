@@ -9798,11 +9798,11 @@ const github = __nccwpck_require__(3007);
 const target = "something/";
 
 try {
-  const diffs = core.getInput("diffs").split("\n");
+  const diffs = core.getInput("who-to-greet").split("\n");
   console.log("diffs", diffs);
   let matched = 0;
   diffs.forEach((diff) => {
-    if (diff.find(diff) !== -1) {
+    if (diff.indexOf(diff) !== -1) {
       matched += 1;
     }
   });
